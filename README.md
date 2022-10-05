@@ -1,4 +1,4 @@
-# Week 6 Starting Code
+# Transition Transform Animation Starting Code
 
 Copy the code from index.html for your in-class demo.
 
