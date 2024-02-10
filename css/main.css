@@ -35,3 +35,151 @@
 	background-color: #e89380;
 	/*orange*/
 }
+
+/*** 1. CSS Transition ***/
+
+.transition .b1{
+	transition: width 1000ms ease-in-out 0.5s; 
+}
+
+.transition .b1:hover {
+	width: 400px;
+}
+
+.transition .b2{
+	transition: width 1000ms 0.2s, height 500ms 0.5s;
+	transition-timing-function: ease-out;
+}
+
+.transition .b2:hover {
+	width: 300px;
+	height: 300px;
+}
+
+.transition .b3{
+	transition: transform 1s cubic-bezier(1, .16, .42, .48) 0.5s;
+}
+
+.transition .b3:hover {
+	transform: rotate(80deg);
+}
+
+.transition .b4{
+	transition: all 1s ease-in;
+}
+
+.transition .b4:hover {
+	background-color: #de5d83;
+	border-radius: 30px;
+}
+
+/*** 2. CSS Transition ***/
+.transform .box{
+	transition: all 1s ease-out 0.5s;
+}
+
+.transform .b1:hover {
+	transform: translate(20px, 30px)
+}
+
+.transform .b2:hover {
+	transform: scale(1.4);
+}
+
+.transform .b3 {
+	transform-origin: right top;
+}
+
+.transform .b3:hover {
+	transform: rotate(45deg);
+	/* transform-origin: right top;  */
+}
+
+.transform .b4{
+	transform: skewX(45deg) skewY(30deg);
+}
+
+.transform .b4:hover {
+	transform: skew(0,0)
+}
+
+/* CSS Animation */
+
+@keyframes changeColor{
+	from{
+		background-color:#cc80cc ;
+	}
+	to{
+		background-color:pink ;
+	}
+}
+
+.animation .b1{
+	animation-name: changeColor;
+	animation-duration: 2s;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes moveAround {
+	0%{
+		transform: translate(0,0);
+	}
+	25%{
+		transform: translate(200px, 0);
+	}
+	50%{
+		transform: translate(200px, 200px);
+	}
+	75%{
+		transform: translate(0px, 200px);
+	}
+	100%{
+		transform: translate(0px, 0px);
+	}
+}
+
+.animation .b2 {
+	animation: moveAround 4s;
+	animation-delay: 3s;
+	animation-iteration-count: 3;
+	/* animation-duration: 2s;
+	animation-delay: 3s;
+	animation-fill-mode: forwards; */
+
+}
+
+@keyframes transformMe {
+	0%{
+		transform: scale(0.5) rotateX(0) translateX(0)
+	}
+
+	100%{
+		transform: scale(0.5) rotateX(180deg) translateX(600px)
+	}
+}
+
+.animation .b3 {
+	/* name, duration, time-function, delay, count, direction, fill */
+	animation: transformMe 1.5s ease-out 3s 12 alternate forwards ;
+}
+
+.animation .b3:active{
+	animation-play-state: paused;
+}
+
+@keyframes anything{
+	0%{
+		transform: scale(1.5) rotate(0) translate(200px, 0);
+	}
+	50%{
+		transform: rotateY(360deg) translate(200px 200px)
+	}
+	100%{
+		transform: translate(0, 200px)
+	}
+}
+
+.animation .b4 {
+	animation: anything 2s ease-in 1s infinite alternate backwards;
+}
